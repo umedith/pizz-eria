@@ -71,6 +71,7 @@ function total(myForm){
 	}
 }
 
+
 function blank(myForm){
 	document.getElementById('pickup').checked=true;
 	document.getElementById('small').checked=true;
