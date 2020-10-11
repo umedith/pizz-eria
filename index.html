@@ -19,10 +19,11 @@
     </nav>
     <div id="intro">
         <h1><strong>The Pizz-Eria Online Ordering</strong></h1>
-        <p><strong>Craving for pizza?! We serve your daily need by ordering online!!<br> You are most welcome!!</strong></p>
+        <p><strong>Craving for pizza?! We serve your daily need by ordering online!!<br> You are most welcome!!</strong>
+        </p>
     </div><br><br>
-    <div>
-        <div >
+    <div class=row>
+        <div class="col-md-6">
             <form>
                 <label for="new-first-name">First name</label>
                 <input type="text" class="name" id="new-first-name"><br><br>
@@ -30,34 +31,64 @@
                 <input type="text" class="name" id="new-last-name"><br><br>
                 <label><strong>what size would you like?</strong><br>
                     <select id="size">
-                        <option value="0">choose the size of the pizza</option>
-                        <option value="1000">small</option>
-                        <option value="2000">medium</option>
-                        <option value="3000">large</option>
+                        <option >choose the size of the pizza</option>
+                        <option value="1000rwf">small</option>
+                        <option value="2000rwf">medium</option>
+                        <option value="3000rwf">large</option>
                     </select>
                 </label><br><br>
                 <label><strong>choose the crust that best suits your taste</strong><br>
                     <select id="crust">
                         <option>Open this to select the crust</option>
-                        <option value="500">Crispy</option>
-                        <option value="750">Stuffed</option>
-                        <option value="1000">Gluten Free</option>
+                        <option value="500rwf">Crispy</option>
+                        <option value="750rwf">Stuffed</option>
+                        <option value="1000rwf">Gluten Free</option>
                     </select>
                 </label><br><br>
-                <label><strong>choose your favorite topping</strong><br>
+                <!-- <label><strong>choose your favorite topping</strong><br>
                     <select id="topping">
-                        <option>Open this to select the topings</option>
-                        <option value="">pepperoni</option>
-                        <option value="300">mushrooms</option>
-                        <option value="600">sausage</option>
-                        <option value="450">onions</option>
+                        <option>Open this to select the toppings</option>
+                        <option value="500rwf">pepperoni</option>
+                        <option value="300rwf">mushrooms</option>
+                        <option value="600rwf">sausage</option>
+                        <option value="450rwf">onions</option>
                     </select>
-                </label><br><br>
+                </label><br><br> -->
+                <div id="topping">
+                    <label><strong>Choose the topings</strong><br>
+                    <input type="checkbox" id="small" name="scales" value="300">
+                    <label>pepperoni</label><br>
+                    <input type="checkbox" id="small" name="scales" value="450">
+                    <label>Mushrooms</label><br>
+                    <input type="checkbox" id="small" name="scales" value="500">
+                    <label>Onions</label><br>
+                    <input type="checkbox" id="small" name="scales" value="540">
+                    <label>sausage</label>
+                </div>
+                <label for="">number of Ordered Pizzas</label>
+                <input class="form-control form-group" type="text" id="numberofpizzas">
+                <!-- <span class="btn btn-primary" id="add-order">Another order</span><br><br> -->
                 <input id="submit" type="submit" value="CHECKOUT">
             </form>
+        </div><br><br>
+        <div class="col-md-6">
+
+            <span id="delivery">
+                <input id="submit" type="submit" class="btn btn-danger" value="DELIVERY">
+                <!-- <input id="submit" type="submit" class="btn btn-primary" value="PICK-UP"> -->
+            </span><br><br>
+            <input id="submit" type="submit" class="btn btn-primary" value="PICK-UP"><br><br>
+
+            <!-- <div class="col-md-6"> -->
+            <div id="show-order">
+                <p>You ordered the following:</p>
+                <ul id="placeorderlist">
+
+                </ul>
+                <p>The total is:</p>
+                <p id="total"></p>
+            </div>
         </div>
-
-
     </div>
 </body>
 
