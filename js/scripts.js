@@ -5,8 +5,6 @@ $(document).ready(function() {
         this.sizeCrust = crust;
         this.sizeTopping = topping;
         this.sizeNumberOfPizzas = numberofpizzas;
-
-
     }
     placeOrder.prototype.summary = function() {
 
