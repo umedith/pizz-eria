@@ -1,0 +1,36 @@
+body {
+    background-color: khaki;
+    padding: 15px;
+}
+#intro {
+    text-align: center;
+    background-image: url("1.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+    padding-top: 100px;
+    line-height: 70px;
+    height: 500px;
+    font-size: 40px;
+    color: lightyellow;
+}
+nav {
+    text-align: right;
+    width:100%;
+  }
+  nav ul li {
+    display: inline-block;
+    list-style:none;
+    padding-right: 20px;
+  }
+  nav a {
+    text-decoration: none;
+  }
+
+  select {
+    width: 400px;
+    margin: 10px;
+}
+.form-form {
+    width: 100px;
+}
