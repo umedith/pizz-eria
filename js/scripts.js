@@ -49,7 +49,6 @@ function total(myForm){
     }
 	
 	
-
     totaltops= count * topping;
     totalcrust= countcrust * crust;
     totalPrice= totaltops + totalcrust +total;
