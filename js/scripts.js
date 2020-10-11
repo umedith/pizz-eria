@@ -32,6 +32,7 @@ $(document).ready(function() {
         for (var a = 0; a < topping.length; a++) {
             anotherTopping += parseInt(topping[a]);
         }
+        
 
         var total = parseInt(size) + parseInt(crust) + parseInt(anotherTopping) + parseInt(numberofpizzas);
         console.log(total);
