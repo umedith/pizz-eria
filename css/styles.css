@@ -15,7 +15,6 @@ body {
     color: lightyellow;
 }
 nav {
-  
     text-align: right;
     width:100%;
   }
@@ -32,6 +31,6 @@ nav {
     width: 400px;
     margin: 10px;
 }
-.form-form {
+input {
     width: 100px;
 }
