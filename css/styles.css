@@ -31,6 +31,6 @@ nav {
     width: 400px;
     margin: 10px;
 }
-input {
-    width: 100px;
+.name {
+    width: 350px;
 }
