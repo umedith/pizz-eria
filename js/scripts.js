@@ -1,51 +1,88 @@
-$(document).ready(function() {
-    //BUSINESS LOGIC
-    function placeOrder(size, crust, topping, numberofpizzas) {
-        this.sizeChoice = size;
-        this.sizeCrust = crust;
-        this.sizeTopping = topping;
-        this.sizeNumberOfPizzas = numberofpizzas;
+
+var deliveryaddress;
+function insert(myForm){
+
+	var a = prompt("Please enter your delivery address", "Your address here");
+	document.getElementById('address').value = a; 
+	deliveryaddress=a;
+}
+
+function total(myForm){
+	var total = 0;
+    var topping = 300;
+    var crust = 500;
+    var count= 0;
+    var countcrust=0;
+
+	if(document.getElementById('small').checked){
+
+		total+= 1000;
+	}
+	if(document.getElementById('medium').checked){
+
+		total+= 2500;
+	}
+	if(document.getElementById('large').checked){
+
+		total+= 4000;
+	}
+	if(document.getElementById('topping0').checked){
+		count++;
+	}
+	if(document.getElementById('topping1').checked){
+		count++;
+	}
+	if(document.getElementById('topping2').checked){
+		count++;
     }
-    placeOrder.prototype.summary = function() {
+    if(document.getElementById('topping3').checked){
+		count++;
+    }
+    if(document.getElementById('crust0').checked){
+        countcrust++;
+    }
+    if(document.getElementById('crust1').checked){
+        countcrust++;
+    }
+    if(document.getElementById('crust2').checked){
+        countcrust++;
+    }
+	
+	
 
-        return "pizzasize: " + this.sizeChoice + ", crust:" + this.sizeCrust + ", topping:" + this.sizeTopping + ", numberofpizzas:" +this.sizeNumberOFPizzas;
-    };
+    totaltops= count * topping;
+    totalcrust= countcrust * crust;
+    totalPrice= totaltops + totalcrust +total;
+	ordering=2000;
+	
+	num=document.getElementById("number").value;
+	var aN= parseInt(num);
 
-    
-    
+	var sumtotalPrice = totalPrice*aN;
 
-      //USER INTERFACE
-      $("#submit").click(function() {
-        var size = $('#size').val();
-        var crust = $('#crust').val();
-        var numberofpizzas = $("#numberofpizzas").val();
-        var topping = [];
-        $("input[type=checkbox]:checked").each(function() {
-            topping.push($(this).val());
-        });
-        console.log(topping);
+	if(document.getElementById('delivery').checked){
+		sumtotalPrice+= ordering;
+	}
+	
+	if(document.getElementById('delivery').checked){
+		alert('Your Total will be '+ sumtotalPrice+ 'rwf  delivered to '+ deliveryaddress);
+	}else{
+		alert('Your Total will be '+ sumtotalPrice+ ' rwf and will be ready for pickup in 30 minutes');
+	}
+}
 
-        var newOrder = new placeOrder(size, crust, topping, numberofpizzas);
-        console.log(newOrder);
-        $('ul#placeorderlist').append("<li>" + newOrder.summary() + "</li>");
+function blank(myForm){
+	document.getElementById('pickup').checked=true;
+	document.getElementById('small').checked=true;
+	document.getElementById('address').value="";
+	for(var a=0; a<13; a++){
+		var topname = "topping" + a;
+		document.getElementById(topname).checked=false;
+	}
 
-        var anotherTopping = 0;
-        for (var a = 0; a < topping.length; a++) {
-            anotherTopping += parseInt(topping[a]);
-        }
+}
 
+insert(myForm);
+total(myForm);
+blank(myForm);
 
-        var total = parseInt(size) + parseInt(crust) + parseInt(anotherTopping) + parseInt(numberofpizzas);
-        console.log(total);
-        $("#total").text(total);
-    });
-
-    $('#delivery').click(function() {
-
-        alert("the delivery cost is 2000");
-        var a = prompt("enter ur location");
-        alert("your order will be delivered to" + " " + a);
-    });
-
-
-});

@@ -1,95 +1,85 @@
-<!DOCTYPE html>
-<html>
+<doctype! html>
+	<html>
 
-<head>
-    <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
-    <link href="css/styles.css" rel="stylesheet" type="text/css">
-    <script src="js/jquery-3.5.1.js"></script>
-    <script src="js/scripts.js"></script>
-    <title>The pizz-eria Orders</title>
-</head>
+	<head>
 
-<body>
-    <nav>
-        <ul>
-            <li class="nav-item"><a class="nav-link" href="#about_us">About Us</a></li>
-            <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-            <li class="nav-item"><a class="nav-link" href=#menu>Menu</a></li>
-        </ul>
-    </nav>
-    <div id="intro">
-        <h1><strong>The Pizz-Eria Online Ordering</strong></h1>
-        <p><strong>Craving for pizza?! We serve your daily need by ordering online!!<br> You are most welcome!!</strong>
-        </p>
-    </div><br><br>
-    <div class=row>
-        <div class="col-md-6">
-            <form>
-                <label for="new-first-name">First name</label>
-                <input type="text" class="name" id="new-first-name"><br><br>
-                <label for="new-last-name">Last name</label>
-                <input type="text" class="name" id="new-last-name"><br><br>
-                <label><strong>what size would you like?</strong><br>
-                    <select id="size">
-                        <option >choose the size of the pizza</option>
-                        <option value="1000rwf">small</option>
-                        <option value="2000rwf">medium</option>
-                        <option value="3000rwf">large</option>
-                    </select>
-                </label><br><br>
-                <label><strong>choose the crust that best suits your taste</strong><br>
-                    <select id="crust">
-                        <option>Open this to select the crust</option>
-                        <option value="500rwf">Crispy</option>
-                        <option value="750rwf">Stuffed</option>
-                        <option value="1000rwf">Gluten Free</option>
-                    </select>
-                </label><br><br>
-                <!-- <label><strong>choose your favorite topping</strong><br>
-                    <select id="topping">
-                        <option>Open this to select the toppings</option>
-                        <option value="500rwf">pepperoni</option>
-                        <option value="300rwf">mushrooms</option>
-                        <option value="600rwf">sausage</option>
-                        <option value="450rwf">onions</option>
-                    </select>
-                </label><br><br> -->
-                <div id="topping">
-                    <label><strong>Choose the topings</strong><br>
-                    <input type="checkbox" id="small" name="scales" value="300">
-                    <label>pepperoni</label><br>
-                    <input type="checkbox" id="small" name="scales" value="450">
-                    <label>Mushrooms</label><br>
-                    <input type="checkbox" id="small" name="scales" value="500">
-                    <label>Onions</label><br>
-                    <input type="checkbox" id="small" name="scales" value="540">
-                    <label>sausage</label>
-                </div>
-                <label for="">number of Ordered Pizzas</label>
-                <input class="form-control form-group" type="text" id="numberofpizzas">
-                <!-- <span class="btn btn-primary" id="add-order">Another order</span><br><br> -->
-                <input id="submit" type="submit" value="CHECKOUT">
-            </form>
-        </div><br><br>
-        <div class="col-md-6">
+		<link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+		<link href="css/styles.css" rel="stylesheet" type="text/css">
+		<script src="js/jquery-3.5.1.js"></script>
+		<script src="js/scripts.js"></script>
+		<title> Pizza Order JavaScript</title>
 
-            <span id="delivery">
-                <input id="submit" type="submit" class="btn btn-danger" value="DELIVERY">
-                <!-- <input id="submit" type="submit" class="btn btn-primary" value="PICK-UP"> -->
-            </span><br><br>
-            <input id="submit" type="submit" class="btn btn-primary" value="PICK-UP"><br><br>
+	</head>
 
-            <!-- <div class="col-md-6"> -->
-            <div id="show-order">
-                <p>You ordered the following:</p>
-                <ul id="placeorderlist">
+	<body>
+		<nav>
+			<ul>
+				<li class="nav-item"><a class="nav-link" href="#about_us">About Us</a></li>
+				<li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+				<li class="nav-item"><a class="nav-link" href=#menu>Menu</a></li>
+			</ul>
+		</nav>
+		<div id="intro">
+			<h1><strong>The Pizz-Eria Online Ordering</strong></h1>
+			<p><strong>Craving for pizza?! We serve your daily need by ordering online!!<br> You are most
+					welcome!!</strong>
+			</p>
+		</div><br><br>
+		<div class=row>
+			<div class="col-md-6">
+				<h1> pizza delivery</h1>
+				<p><strong>Delivery</strong></p>
+				<form>
+					<input type="radio" name="delivery" id="pickup">Pickup
+					<br>
+					<input type="radio" name="delivery" id="delivery" onclick="insert(this.form)">Delivery (additional
+					2000 added to total)
+					<br>
+					<input type="text" name="address" id="address" value="" readonly>
+					<br>
 
-                </ul>
-                <p>The total is:</p>
-                <p id="total"></p>
-            </div>
-        </div>
-    </div>
-</body>
+				</form>
+				<p><strong>Choose your pizza size</strong></p>
+				<form>
+					<input type="radio" name="size" id="small" > Small rwf 1000
+					<br>
+					<input type="radio" name="size" id="medium"> Medium rwf 2500
+					<br>
+					<input type="radio" name="size" id="large"> Large rwf 4000
+					<br>
+				</form>
+			</div>
+			<div class="col-md-6">
+				<p><strong>Select your Toppings (300rwf each)</strong></p>
+				<form>
+					<input type="checkbox" id="topping0"> Pepperoni<br>
+					<input type="checkbox" id="topping1"> Sausage<br>
+					<input type="checkbox" id="topping2"> Mushrooms<br>
+					<input type="checkbox" id="topping3"> Onions<br>
 
-</html>
+				</form>
+
+				<p></strong>Select your crust (500rwf each)</strong></p>
+				<form>
+					<input type="checkbox" id="crust0"> Crispy<br>
+					<input type="checkbox" id="crust1"> Stuffed<br>
+					<input type="checkbox" id="crust2"> Gluten Free<br>
+
+
+				</form>
+				<p></strong>number if pizzas</strong></p>
+				<form>
+					<input type="text" id="number" name="pizzas">
+				</form>
+
+				<p><strong>Calculate your Total</strong></p>
+				<form>
+					<input type="button" class="btn btn-danger" value="Calculate Total" onclick="total(this.form)">
+					<input type="button" class="btn btn-primary" onclick="blank(this.form)" id="reload" value="Reset Order">
+				</form>
+			</div>
+		</div>
+	</body>
+
+
+	</html>

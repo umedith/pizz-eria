@@ -1,17 +1,18 @@
 body {
-    background-color: khaki;
+    background-color: tan;
     padding: 15px;
+    font-size: 20px;
 }
 #intro {
     text-align: center;
-    background-image: url("1.jpeg");
-    background-repeat: no-repeat;
+    background-image: url("ed.jpg");
+    /* background-repeat: no-repeat; */
     background-size: cover;
     background-position: 50% 50%;
-    padding-top: 100px;
+    padding-top: 130px;
     line-height: 70px;
-    height: 500px;
-    font-size: 40px;
+    height: 550px;
+    font-size: 30px;
     color: lightyellow;
 }
 nav {
@@ -26,11 +27,3 @@ nav {
   nav a {
     text-decoration: none;
   }
-
-  select {
-    width: 400px;
-    margin: 10px;
-}
-.name {
-    width: 350px;
-}
